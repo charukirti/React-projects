@@ -1,0 +1,154 @@
+.app {
+  /* max-width: 80rem; */
+  margin: 0 auto;
+  display: flex;
+  align-content: center;
+  flex-direction: column;
+}
+
+header {
+  position: sticky;
+  background: #ffeaa7;
+  top: 0;
+  z-index: 10;
+  backdrop-filter: blur(1px);
+  align-self: stretch;
+  padding: 10px;
+  width: 100%;
+}
+
+header h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #ea2027;
+}
+
+.add__task {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+}
+
+.add__task--input {
+  color: #5a3e2b;
+  font-family: inherit;
+  border: none;
+  border-radius: 1rem;
+  padding: 1rem 3rem;
+  font-weight: 700;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.add__task--btn {
+  font-family: inherit;
+  border: none;
+  border-radius: 1rem;
+  padding: 1rem 3rem;
+  font-weight: 700;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.add__task button {
+  background-color: #55efc4;
+  transition: 0.5s background ease;
+}
+
+.add__task button:hover {
+  background-color: #8dcfbd;
+}
+
+/* maiking them responsive */
+
+@media only screen and (max-width: 768px) {
+  header h1 {
+    font-size: 1.65rem;
+  }
+
+  .add__task {
+    flex-direction: column;
+  }
+
+  .add__task .add__task--input,
+  .add__task--btn {
+    font-size: 1rem;
+  }
+}
+
+/* styling task list */
+
+.todo__list {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background-color: #1a1a40;
+  padding: 1rem;
+}
+
+.todo__list--item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #8758ff;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  max-width: 100%;
+  width: 40rem;
+  border-radius: 1rem;
+  color: #fff;
+}
+
+.todo__list--item > p {
+  font-size: 1.25rem;
+  font-weight: 500;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.btn__container {
+  display: flex;
+  gap: 2rem;
+}
+
+.btn__container--btn {
+  font-size: 1.25rem;
+  cursor: pointer;
+}
+
+/* making todo list responsive */
+
+@media only screen and (max-width: 768px) {
+  .todo__list--item {
+    width: 25rem;
+  }
+}
+
+footer {
+  position: sticky;
+  bottom: 0;
+  background-color: #ffeaa7;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+}
+
+.filter__task {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.filter__task--active {
+}
+
+.filter__task--completed {
+}
+
+.filter__task--total {
+}
