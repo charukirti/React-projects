@@ -125,6 +125,11 @@ header {
   width: 100%;
   padding: 10px;
 
+  .task__list--text {
+    text-align: center;
+    color: #ea2027;
+  }
+
   /* Task component styles */
 
   & .task__list--item {
