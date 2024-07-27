@@ -1,32 +1,18 @@
+import { useState } from "react";
+import { v4 as uuidv4 } from "uuid";
+import "./App.css";
 import Header from "./components/Header";
 import AddTask from "./components/AddTask";
 import FilterTask from "./components/FilterTask";
 import TaskList from "./components/TaskList";
 import Footer from "./components/Footer";
-import "./App.css";
-import { useState } from "react";
-import { v4 as uuidv4 } from "uuid";
-import EditTask from "./components/EditTask";
 uuidv4();
 
-const task = [
-  { id: 1, taskName: "Order Food", isComplete: false, isEditing: false },
-  { id: 2, taskName: "Learn React", isComplete: false, isEditing: false },
-  { id: 3, taskName: "Read Book", isComplete: true, isEditing: false },
-  { id: 4, taskName: "Post Tweet", isComplete: false, isEditing: false },
-  { id: 5, taskName: "Drink Water", isComplete: false, isEditing: false },
-  //   { id: 6, taskName: "Eat Food", isComplete: false, isEditing: false },
-  //   { id: 7, taskName: "Eat Food", isComplete: false, isEditing: false },
-  //   { id: 8, taskName: "Eat Food", isComplete: false, isEditing: false },
-  //   { id: 9, taskName: "Eat Food", isComplete: false, isEditing: false },
-  //   { id: 10, taskName: "Eat Food", isComplete: false, isEditing: false },
-  //   { id: 11, taskName: "Eat Food", isComplete: false, isEditing: false },
-];
-
 export default function App() {
-  const [tasks, setTasks] = useState(task);
+  const [tasks, setTasks] = useState([]);
+  const [filter, setFilter] = useState("all");
 
-  // TODO: function for adding task
+  // function for adding task
 
   function addTask(task) {
     console.log(task);
@@ -34,11 +20,16 @@ export default function App() {
       ...tasks,
       { id: uuidv4(), taskName: task, isComplete: false, isEditing: false },
     ]);
+    setFilter("all");
   }
 
-  // TODO: function for filtering task
+  // function for filtering task
 
-  // TODO: function for complete task
+  function updateFilter(newFilter) {
+    setFilter(newFilter);
+  }
+
+  // function for complete task
 
   function completeTask(id) {
     setTasks(
@@ -48,7 +39,7 @@ export default function App() {
     );
   }
 
-  // TODO: function for editing task
+  // function for editing task
 
   /* for toggling edit task mode */
   function editTask(id) {
@@ -70,13 +61,13 @@ export default function App() {
     );
   }
 
-  // TODO: function for deleting task
+  // function for deleting task
 
   function deleteTask(id) {
     setTasks(tasks.filter((task) => task.id !== id));
   }
 
-  // TODO: function for clearing tasks
+  // function for clearing tasks
 
   function clearTasks() {
     setTasks([]);
@@ -87,10 +78,15 @@ export default function App() {
       <div className="sub__container">
         <Header />
         <AddTask addTask={addTask} />
-        <FilterTask />
+        <FilterTask updateFilter={updateFilter} />
       </div>
       <TaskList
-        tasks={tasks}
+        tasks={tasks.filter((task) => {
+          if (filter === "all") return true;
+          if (filter === "active") return !task.isComplete;
+          if (filter === "completed") return task.isComplete;
+          return true;
+        })}
         completeTask={completeTask}
         deleteTask={deleteTask}
         editedTask={editedTask}
