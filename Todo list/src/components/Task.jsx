@@ -5,7 +5,12 @@ import {
   faTrashCan,
 } from "@fortawesome/free-regular-svg-icons";
 
-export default function Task({ task, toggleComplete, toggleDelete, toggleEdit }) {
+export default function Task({
+  task,
+  toggleComplete,
+  toggleDelete,
+  toggleEdit,
+}) {
   return (
     <div className="task__list--item">
       <p className={`task__name ${task.isComplete ? "completed" : ""}`}>
