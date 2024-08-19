@@ -1,12 +1,19 @@
-export default function SearchBar (){
-    /* 
-    const api_key = '43fb221f0871137159757d7f6656a790';
-    const api_url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${api_key}&units=metric`;
-    */
-    return (
-        <>
-            
-        </>
-    )
+import searchIcon from "../assets/search.png";
+export default function SearchBar({ inputRef, search }) {
+  return (
+    <div className="weather-app__search">
+      <input
+        type="text"
+        className="weather-app__search-input"
+        placeholder="Enter city name..."
+        ref={inputRef}
+      />
+      <img
+        src={searchIcon}
+        alt="search-icon"
+        className="weather-app__search-icon"
+        onClick={() => search(inputRef.current.value)}
+      />
+    </div>
+  );
 }
-
