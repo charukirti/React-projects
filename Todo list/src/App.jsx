@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { v4 as uuidv4 } from "uuid";
 import "./App.css";
 import Header from "./components/Header";
@@ -9,8 +9,28 @@ import Footer from "./components/Footer";
 uuidv4();
 
 export default function App() {
-  const [tasks, setTasks] = useState([]);
+  const [tasks, setTasks] = useState(() => {
+    const storedTasks = localStorage.getItem("tasks");
+    return storedTasks ? JSON.parse(storedTasks) : [];
+  });
   const [filter, setFilter] = useState("all");
+
+  useEffect(() => {
+    const storedTasks = localStorage.getItem("tasks");
+    if (storedTasks) {
+      console.log("Retrieved from localStorage:", storedTasks);
+      setTasks(JSON.parse(storedTasks));
+    } else {
+      console.log("No tasks found in localStorage");
+    }
+  }, []); 
+
+  // Save tasks to local storage whenever tasks state changes
+  useEffect(() => {
+    console.log("Saving to localStorage:", tasks);
+    localStorage.setItem("tasks", JSON.stringify(tasks));
+  }, [tasks]);
+
 
   // function for adding task
 
