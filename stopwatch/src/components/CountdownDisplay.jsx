@@ -10,11 +10,11 @@ export default function CountdownDisplay({
   return (
     <>
       <div className="countdown-display">
-        <p>{hours}</p>
+        <p>{hours < 10 ? '0' : ''}{hours}</p>
         <span>:</span>
-        <p>{minutes}</p>
+        <p>{minutes < 10 ? '0' : ''}{minutes}</p>
         <span>:</span>
-        <p>{seconds}</p>
+        <p>{seconds < 10 ? '0' : ''}{seconds}</p>
       </div>
 
       <div className="countdown-buttons">
