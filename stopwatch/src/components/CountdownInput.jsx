@@ -49,6 +49,7 @@ function reducer(state, action) {
         minutes = 59;
         seconds = 59;
       } else {
+        alert("Time is up!");
         return {
           ...state,
           isStarted: false,
@@ -124,6 +125,7 @@ export default function CountdownInput() {
               placeholder="HH"
               maxLength={2}
               onChange={handleHourChange}
+              aria-label="hours input"
             />
             <span>:</span>
             <input
@@ -131,6 +133,7 @@ export default function CountdownInput() {
               placeholder="MM"
               maxLength={2}
               onChange={handleMinutesChange}
+              aria-label="minutes input"
             />
             <span>:</span>
             <input
@@ -138,6 +141,7 @@ export default function CountdownInput() {
               placeholder="SS"
               maxLength={2}
               onChange={handleSecondsChange}
+              aria-label="seconds input"
             />
           </div>
 
