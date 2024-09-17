@@ -1,0 +1,162 @@
+#root {
+  width: 100%;
+  height: 100%;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  background-color: #c8d6e5;
+}
+
+/* Welcome Msg Styles */
+
+.welcome_msg {
+  text-align: center;
+  padding: 20px;
+
+  .previous_mode {
+    color: #576574;
+    font-size: 2rem;
+    font-weight: 400;
+    text-transform: uppercase;
+  }
+
+  .high_score {
+    color: #576574;
+    font-size: 2rem;
+    font-weight: 400;
+    margin-top: 1rem;
+  }
+
+  h1 {
+    margin-top: 7rem;
+    color: #ff6b6b;
+    font-size: clamp(1rem, 12vw, 3rem);
+    font-weight: 900;
+    text-transform: uppercase;
+  }
+
+  .level {
+    margin-top: 20px;
+  }
+  label {
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: #576574;
+  }
+
+  select {
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #576574;
+
+    option {
+      font-size: 1rem;
+      font-weight: 600;
+    }
+  }
+}
+
+/* Guess A Number Styles */
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  h1 {
+    margin-top: 10rem;
+    color: #ff6b6b;
+    font-size: 3rem;
+    font-weight: 900;
+    text-transform: uppercase;
+  }
+
+  .data {
+    margin-top: 10px;
+    font-size: 1rem;
+    font-weight: 400;
+    color: #576574;
+    display: flex;
+    gap: 1rem;
+
+    p {
+      margin-bottom: 10px;
+    }
+  }
+
+  input {
+    padding: 10px;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+    font-size: 2rem;
+    font-family: inherit;
+    text-align: center;
+  }
+
+  .btn_container {
+    margin-top: 20px;
+    display: flex;
+    gap: 1rem;
+  }
+
+  button {
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: 1px solid transparent;
+    background-color: #ff6b6b;
+    color: #fff;
+    font-family: inherit;
+    font-size: 1.25rem;
+    font-weight: 600;
+    cursor: pointer;
+  }
+
+  .guess {
+    background-color: #1dd1a1;
+  }
+
+  .reset {
+    background-color: #ff6b6b;
+  }
+}
+
+.result_container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #c8d6e5;
+
+  h1 {
+    color: #ff6b6b;
+    font-size: 4rem;
+    font-weight: 900;
+    text-transform: uppercase;
+  }
+
+  p {
+    margin-top: 10px;
+    font-size: 3rem;
+    font-weight: 400;
+    color: #576574;
+  }
+
+  button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: 1px solid transparent;
+    background-color: #ff6b6b;
+    color: #fff;
+    font-family: inherit;
+    font-size: 1.25rem;
+    font-weight: 600;
+    cursor: pointer;
+  }
+}
