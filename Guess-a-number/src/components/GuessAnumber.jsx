@@ -1,3 +1,5 @@
+import Message from "./Message";
+
 export default function GuessAnumber({ state, dispatch }) {
   console.log(state.targetNumber);
   function handleInputChange(e) {
@@ -21,7 +23,9 @@ export default function GuessAnumber({ state, dispatch }) {
         onChange={handleInputChange}
       />
 
-      <p className="message">{state.message}</p>
+      {state.message && <Message message={state.message} />}
+
+      {/* <Message message={state.message} /> */}
 
       <div className="btn_container">
         <button
