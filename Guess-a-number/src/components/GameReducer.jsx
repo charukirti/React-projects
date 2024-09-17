@@ -42,6 +42,7 @@ export function GameReducer(state, action) {
       };
 
     case "HANDLE_GUESS":
+      if(state.currentGuess === null || state.currentGuess === "") return state
       const newAttempts = state.currentAttempts - 1;
       const initialAttempts = grabLevelDetails(state.currentLevel).attempts;
       let message = "";
