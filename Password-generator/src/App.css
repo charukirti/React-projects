@@ -1,0 +1,24 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    min-height: 100vh;
+    background-color: #2c3e50;
+}
+
+label {
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.low {
+    background-color: #ff4757;
+}
+
+.medium {
+    background-color: #f1c40f;
+}
+
+.good {
+    background-color: #2ecc71;
+}
