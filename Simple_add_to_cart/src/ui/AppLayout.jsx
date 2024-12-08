@@ -4,9 +4,9 @@ import Footer from "./Footer";
 
 export default function AppLayout() {
   return (
-    <div className="grid h-screen grid-rows-[auto_1fr_auto]">
+    <div className="flex flex-col h-screen overflow-auto">
       <Header />
-      <main>
+      <main className="flex-grow">
         <Outlet />
       </main>
       <Footer />
